@@ -1,0 +1,36 @@
+package main
+
+import (
+	"time"
+
+	"github.com/pera-urosevic/gonky/display"
+	"github.com/pera-urosevic/gonky/render"
+	"github.com/pera-urosevic/gonky/util"
+	"github.com/pera-urosevic/gonky/widget"
+)
+
+func main() {
+	Width := 48
+	Height := 20
+
+	util.Logger()
+	display.Start(Width, Height)
+
+	widget.Clock{
+		Every: 1 * time.Second,
+		Render: func(w *widget.Clock) {
+			render.TextLeft(w.State.String(), 0, 0)
+		},
+	}.Start()
+
+	run()
+}
+
+func run() {
+	for {
+		select {
+		case <-time.After(time.Millisecond * 1000):
+			display.Sync()
+		}
+	}
+}

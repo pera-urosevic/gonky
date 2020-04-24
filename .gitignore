@@ -1,0 +1,5 @@
+gonky
+main.go
+*_test.go
+*.sh
+*.log
