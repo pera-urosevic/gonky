@@ -46,7 +46,7 @@ func (internet *Internet) sensor() {
 	}
 	pinger, e := ping.NewPinger(internet.Host)
 	if e != nil {
-		internet.State.Add(internet.id(), 1000*1000)
+		internet.State.Add(internet.id(), 1000)
 		util.ErrorLog(e)
 		return
 	}
