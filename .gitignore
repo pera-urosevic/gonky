@@ -1,5 +1,6 @@
-gonky
-main.go
+/gonky
+/main.go
+/backup
 *_test.go
 *.sh
 *.log
