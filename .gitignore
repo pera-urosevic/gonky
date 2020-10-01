@@ -3,4 +3,5 @@
 /backup
 *_test.go
 *.sh
+*.ps1
 *.log
