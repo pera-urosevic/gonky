@@ -58,6 +58,9 @@ func (news *News) sensor(url string) ([]string, error) {
 }
 
 func (news *News) slide() {
+	if news.titles == nil {
+		return
+	}
 	news.index = (news.index + 1) % len(news.titles)
 	news.State = news.titles[news.index]
 	news.Render(news)
