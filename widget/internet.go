@@ -53,7 +53,7 @@ func (internet *Internet) sensor() {
 	pinger.Count = internet.Samples
 	pinger.Run()
 	stats := pinger.Statistics()
-	sensor := float64(stats.AvgRtt.Seconds())
+	sensor := float64(stats.AvgRtt.Milliseconds())
 	internet.State.Add(internet.id(), sensor)
 }
 
