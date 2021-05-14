@@ -14,7 +14,8 @@ func Print(text string, x int, y int) {
 func PrintReverse(text string, x int, y int) {
 	runes := []rune(text)
 	l := len(runes)
+	style := tcell.StyleDefault.Foreground(tcell.ColorRed)
 	for i := range runes {
-		screen.SetContent(x-i, y, runes[l-i-1], nil, tcell.StyleDefault)
+		screen.SetContent(x-i, y, runes[l-i-1], nil, style)
 	}
 }
